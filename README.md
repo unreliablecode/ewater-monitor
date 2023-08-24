@@ -21,7 +21,7 @@ Before running this application, ensure you have the following:
 1. Clone the repository to your web server's document root directory:
 
    ```bash
-   git clone https://github.com/your-username/ewater-monitor.git
+   git clone https://github.com/unreliablecode/ewater-monitor.git
    ```
 
 2. Create a MySQL database named `ewatermonitor`.
