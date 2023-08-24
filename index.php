@@ -68,11 +68,14 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT id, pressure, status, active FROM maintable LIMIT $itemsPerPage OFFSET $offset";
-    $result = $conn->query($sql);
+    // Prepare and execute the query
+    $stmt = $conn->prepare("SELECT id, pressure, status, active FROM maintable LIMIT ? OFFSET ?");
+    $stmt->bind_param("ii", $itemsPerPage, $offset);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
             $id = $row["id"];
             $pressure = $row["pressure"];
             $status = $row["status"];
@@ -93,6 +96,7 @@
         echo "0 results";
     }
 
+    $stmt->close();
     $conn->close();
     ?>
 </div>
