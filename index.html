@@ -3,66 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <title>Water Pump Monitoring System</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .glass-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .glass-box:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        h1, h2, p, ul, ol {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #00aaff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Water Pump Monitoring System</h1>
+    <div class="glass-box">
+        <h1>Water Pump Monitoring System</h1>
 
-    <p>This project is a simple web application that displays information about water pumps, including their status, pressure, and active/inactive state. The application fetches data from a MySQL database and dynamically generates the content using PHP and HTML.</p>
+        <p>This project is a simple web application that displays information about water pumps, including their status, pressure, and active/inactive state. The application fetches data from a MySQL database and dynamically generates the content using PHP and HTML.</p>
 
-    <h2>Features</h2>
-    <ul>
-        <li>Displays a grid of pump details, including ID, status, pressure, and active/inactive state.</li>
-        <li>Uses CSS for styling, with green and red boxes indicating pump status and activity.</li>
-        <li>Implements pagination to navigate through pump records in the database.</li>
-        <li>Retrieves data from a MySQL database using PHP and displays it on the web page.</li>
-    </ul>
+        <h2>Features</h2>
+        <ul>
+            <li>Displays a grid of pump details, including ID, status, pressure, and active/inactive state.</li>
+            <li>Uses CSS for styling, with green and red boxes indicating pump status and activity.</li>
+            <li>Implements pagination to navigate through pump records in the database.</li>
+            <li>Retrieves data from a MySQL database using PHP and displays it on the web page.</li>
+        </ul>
 
-    <h2>Prerequisites</h2>
-    <p>Before running this application, ensure you have the following:</p>
-    <ul>
-        <li>A web server (e.g., Apache) with PHP support.</li>
-        <li>A MySQL database with the necessary table (<code>maintable</code> in this case) and relevant data.</li>
-    </ul>
+        <h2>Prerequisites</h2>
+        <p>Before running this application, ensure you have the following:</p>
+        <ul>
+            <li>A web server (e.g., Apache) with PHP support.</li>
+            <li>A MySQL database with the necessary table (<code>maintable</code> in this case) and relevant data.</li>
+        </ul>
 
-    <h2>Setup</h2>
-    <ol>
-        <li>Clone the repository to your web server's document root directory:</li>
-    </ol>
-    <pre><code>git clone https://github.com/unreliablecode/ewater-monitor.git</code></pre>
-    
-    <ol start="2">
-        <li>Create a MySQL database named <code>ewatermonitor</code>.</li>
-        <li>Import the necessary data into the database. You can find a sample SQL file in the repository (<code>database_dump.sql</code>).</li>
-        <li>Modify the database connection details in the PHP code:</li>
-    </ol>
-    <pre><code>
-        Open <code>index.php</code> and update the following lines with your database credentials:
-        $servername = "localhost";
-        $username = "your_username";
-        $password = "your_db_password";
-        $dbname = "your_db_name";
-    </code></pre>
+        <h2>Setup</h2>
+        <ol>
+            <li>Clone the repository to your web server's document root directory:</li>
+        </ol>
+        <pre><code>git clone https://github.com/unreliablecode/ewater-monitor.git</code></pre>
+        
+        <ol start="2">
+            <li>Create a MySQL database named <code>ewatermonitor</code>.</li>
+            <li>Import the necessary data into the database. You can find a sample SQL file in the repository (<code>database_dump.sql</code>).</li>
+            <li>Modify the database connection details in the PHP code:</li>
+        </ol>
+        <pre><code>
+            Open <code>index.php</code> and update the following lines with your database credentials:
+            $servername = "localhost";
+            $username = "your_username";
+            $password = "your_db_password";
+            $dbname = "your_db_name";
+        </code></pre>
 
-    <ol start="5">
-        <li>Start your web server and access the application through a web browser.</li>
-    </ol>
+        <ol start="5">
+            <li>Start your web server and access the application through a web browser.</li>
+        </ol>
 
-    <h2>Usage</h2>
-    <ul>
-        <li>Upon accessing the application, you'll see a grid of pump details.</li>
-        <li>Pump status is indicated by green (Active) and red (Inactive) boxes.</li>
-        <li>Pump pressure and status (Normal/ERROR) are displayed for each pump.</li>
-        <li>Pagination links at the bottom allow you to navigate through pump records.</li>
-    </ul>
+        <h2>Usage</h2>
+        <ul>
+            <li>Upon accessing the application, you'll see a grid of pump details.</li>
+            <li>Pump status is indicated by green (Active) and red (Inactive) boxes.</li>
+            <li>Pump pressure and status (Normal/ERROR) are displayed for each pump.</li>
+            <li>Pagination links at the bottom allow you to navigate through pump records.</li>
+        </ul>
 
-    <h2>Contributing</h2>
-    <p>Contributions are welcome! If you find any issues or have suggestions, feel free to create an issue or pull request.</p>
+        <h2>Contributing</h2>
+        <p>Contributions are welcome! If you find any issues or have suggestions, feel free to create an issue or pull request.</p>
 
-    <h2>License</h2>
-    <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
-
-    <hr>
-
-    <p>Feel free to customize this README according to your needs and add any additional sections or information that would be relevant to users of your project.</p>
+        <h2>License</h2>
+        <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+    </div>
 </body>
 </html>
